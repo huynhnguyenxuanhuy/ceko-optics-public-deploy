@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%23fff%22%2F%3E%3Cpath%20d%3D%22M5%2016c2.8-5.2%208-5.2%2011%200%203-5.2%208.2-5.2%2011%200%22%20fill%3D%22none%22%20stroke%3D%22%23d83b2f%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%2217%22%20r%3D%225%22%20fill%3D%22none%22%20stroke%3D%22%23222%22%20stroke-width%3D%221.8%22%2F%3E%3Ccircle%20cx%3D%2221%22%20cy%3D%2217%22%20r%3D%225%22%20fill%3D%22none%22%20stroke%3D%22%23222%22%20stroke-width%3D%221.8%22%2F%3E%3Ctext%20x%3D%2216%22%20y%3D%2228%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%227%22%20font-weight%3D%22800%22%20fill%3D%22%23d83b2f%22%3ECE%3C%2Ftext%3E%3C%2Fsvg%3E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CEKO OPTICS – Tròng kính công nghệ Hàn Quốc SHMC Coating chất lượng cao.">
+  <title>Dịch vụ OEM – Thương hiệu kính riêng | CEKO OPTICS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --gold: #e03024;
+    --gold-l: #e03024;
+    --gold-pale: #ffe8e5;
+    --dark: #ffffff;
+    --dark2: #f5f5f5;
+    --dark3: #ffffff;
+    --cream: #1f1f1f;
+    --cream2: #3f3f3f;
+    --muted: #666666;
+    --border: rgba(0,0,0,0.10);
+    --radius: 4px;
+  }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: var(--dark);
+    color: var(--cream);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── NAV ── */
+  #main-nav {
+    position: fixed; top: 0; width: 100%; z-index: 999;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 56px; height: 68px;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    transition: background .3s;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem; font-weight: 900;
+    letter-spacing: 3px; color: var(--gold-l);
+  }
+  .nav-logo span { color: var(--cream); font-weight: 400; }
+  #nav-menu {
+    list-style: none; display: flex; gap: 36px; align-items: center;
+  }
+  #nav-menu a {
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 1.4px; text-transform: uppercase;
+    color: var(--cream2); transition: color .25s;
+  }
+  #nav-menu a:hover, #nav-menu a.active { color: var(--gold-l); }
+  .nav-cta {
+    background: var(--gold) !important; color: var(--dark) !important;
+    padding: 8px 20px; border-radius: var(--radius); font-weight: 600 !important;
+  }
+  .nav-cta:hover { background: var(--gold-l) !important; }
+  .nav-toggle {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .nav-toggle span {
+    display: block; width: 24px; height: 2px;
+    background: var(--cream); border-radius: 2px; transition: all .3s;
+  }
+
+  /* ── PAGE HERO (inner pages) ── */
+  .page-hero {
+    padding: 140px 56px 80px;
+    background: linear-gradient(135deg, var(--dark2) 0%, var(--dark) 100%);
+    border-bottom: 1px solid var(--border);
+    position: relative; overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; top: -40%; right: -10%; width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(224,48,36,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* CEKO hero image layer */
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: min(58%, 820px);
+    background: linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.68) 38%, rgba(255,255,255,.18) 100%), var(--page-hero-image, url('/assets/lens-images/IMG_20260513_124726.png')) center / cover no-repeat;
+    opacity: .72;
+    pointer-events: none;
+  }
+
+  .page-hero-inner { max-width: 700px; position: relative; z-index: 1; }
+  .eyebrow {
+    font-size: 0.7rem; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 18px; display: block;
+  }
+  .page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 900; line-height: 1.15; margin-bottom: 20px;
+  }
+  .page-hero h1 em { font-style: italic; color: var(--gold-l); }
+  .page-hero p {
+    font-size: 1rem; color: var(--muted); line-height: 1.8; max-width: 520px;
+  }
+
+  /* ── SECTIONS ── */
+  .section { padding: 88px 56px; }
+  .section--alt { background: var(--dark2); }
+  .section-wrap { max-width: 1180px; margin: 0 auto; }
+  .section-header { margin-bottom: 56px; }
+  .section-header.center { text-align: center; }
+  .section-header.center .section-desc { margin: 0 auto; }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 700; line-height: 1.2; margin-bottom: 16px;
+  }
+  .section-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.8; max-width: 540px; }
+
+  /* ── GRID SYSTEM ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+  /* ── PRODUCT CARD ── */
+  .prod-card {
+    background: var(--dark3); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    transition: border-color .35s, transform .35s, box-shadow .35s;
+  }
+  .prod-card:hover {
+    border-color: rgba(224,48,36,0.38);
+    transform: translateY(-5px);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.45);
+  }
+  .prod-card:hover .prod-img { transform: scale(1.05); }
+  .prod-img-wrap {
+    height: 210px; overflow: hidden;
+    background: rgba(255,255,255,0.03);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .prod-img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; }
+  .prod-badge {
+    display: inline-block; background: var(--gold); color: var(--dark);
+    font-size: 0.63rem; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 3px 9px; border-radius: 2px;
+    margin-bottom: 10px;
+  }
+  .prod-body { padding: 22px 22px 26px; }
+  .prod-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.08rem; font-weight: 700; margin-bottom: 7px;
+  }
+  .prod-spec { font-size: 0.8rem; color: var(--muted); line-height: 1.65; margin-bottom: 14px; }
+  .prod-link {
+    font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold-l); font-weight: 600;
+    display: inline-flex; align-items: center; gap: 8px; transition: gap .25s;
+  }
+  .prod-link:hover { gap: 13px; }
+
+  /* ── FEATURE CARD ── */
+  .feat-card {
+    background: var(--dark3); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 32px 28px;
+    transition: border-color .3s, transform .3s;
+  }
+  .feat-card:hover { border-color: rgba(224,48,36,0.3); transform: translateY(-4px); }
+  .feat-icon {
+    width: 48px; height: 48px; background: rgba(224,48,36,0.1);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; margin-bottom: 20px;
+  }
+
+  /* CEKO image-backed icons */
+  .feat-icon {
+    background: linear-gradient(rgba(255,255,255,.08), rgba(255,255,255,.08)), var(--feature-image, url('/assets/lens-images/IMG_20260513_124640.png')) center / cover no-repeat !important;
+    color: transparent !important;
+    text-shadow: none !important;
+    overflow: hidden;
+    border: 1px solid rgba(216, 59, 47, .18);
+  }
+
+  .feat-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.08rem; font-weight: 700; margin-bottom: 10px;
+  }
+  .feat-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.75; }
+
+  /* ── GALLERY ── */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .gallery-item {
+    aspect-ratio: 3/4; overflow: hidden; border-radius: var(--radius);
+    border: 1px solid var(--border); cursor: pointer;
+    transition: border-color .3s, transform .3s;
+  }
+  .gallery-item:hover { border-color: rgba(224,48,36,0.35); transform: scale(1.02); }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+  .gallery-item:hover img { transform: scale(1.08); }
+
+  /* ── TIMELINE ── */
+  .timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
+  .timeline::before {
+    content: ''; position: absolute; left: 20px; top: 0; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .timeline-item {
+    display: flex; gap: 32px; align-items: flex-start; padding: 28px 0;
+    border-bottom: 1px solid rgba(224,48,36,0.06);
+  }
+  .timeline-num {
+    width: 40px; height: 40px; background: var(--gold); color: var(--dark);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem;
+    flex-shrink: 0; position: relative; z-index: 1;
+  }
+  .timeline-content h3 {
+    font-size: 1rem; font-weight: 600; margin-bottom: 6px;
+  }
+  .timeline-content p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+  /* ── TABS ── */
+  .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 40px; }
+  .tab-btn {
+    background: none; border: none; cursor: pointer;
+    padding: 14px 28px; font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted);
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: all .25s;
+  }
+  .tab-btn.active, .tab-btn:hover { color: var(--gold-l); border-bottom-color: var(--gold-l); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── BLOG CARD ── */
+  .blog-card {
+    background: var(--dark3); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    transition: border-color .3s, transform .3s;
+  }
+  .blog-card:hover { border-color: rgba(224,48,36,0.3); transform: translateY(-4px); }
+  .blog-img {
+    height: 190px; background: linear-gradient(135deg, var(--dark2), var(--dark3));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.5rem; border-bottom: 1px solid var(--border);
+  }
+  .blog-body { padding: 24px; }
+  .blog-tag {
+    font-size: 0.66rem; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 10px;
+  }
+  .blog-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 700; line-height: 1.4; margin-bottom: 10px;
+  }
+  .blog-excerpt { font-size: 0.82rem; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+  .blog-meta { font-size: 0.75rem; color: var(--muted); display: flex; gap: 12px; }
+
+  /* ── CONTACT FORM ── */
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-label { font-size: 0.78rem; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  .form-input, .form-textarea, .form-select {
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 12px 16px;
+    color: var(--cream); font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.9rem;
+    transition: border-color .25s; outline: none; width: 100%;
+  }
+  .form-input:focus, .form-textarea:focus, .form-select:focus {
+    border-color: rgba(224,48,36,0.5);
+    background: rgba(255,255,255,0.06);
+  }
+  .form-input::placeholder, .form-textarea::placeholder { color: var(--muted); }
+  .form-select option { background: var(--dark2); }
+  .form-textarea { resize: vertical; min-height: 130px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 34px; border-radius: var(--radius); font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase;
+    cursor: pointer; border: none; transition: all .28s; text-decoration: none;
+  }
+  .btn-gold { background: var(--gold); color: var(--dark); box-shadow: 0 6px 24px rgba(224,48,36,0.3); }
+  .btn-gold:hover { background: var(--gold-l); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(224,48,36,0.4); }
+  .btn-outline { border: 1px solid rgba(249,245,236,0.3); color: var(--cream); background: none; }
+  .btn-outline:hover { border-color: var(--gold-l); color: var(--gold-l); }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: var(--border); margin: 0; }
+
+  /* ── BADGE ROW ── */
+  .badge-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+  .badge {
+    background: rgba(224,48,36,0.1); border: 1px solid rgba(224,48,36,0.2);
+    color: var(--gold-l); font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 1px; padding: 6px 14px; border-radius: 2px;
+  }
+
+  /* ── LIGHTBOX ── */
+  #lightbox {
+    display: none; position: fixed; inset: 0; z-index: 9999;
+    background: rgba(10,8,5,0.95); align-items: center; justify-content: center;
+    cursor: pointer;
+  }
+  #lightbox.open { display: flex; }
+  #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: var(--radius); }
+  #lightbox-close {
+    position: absolute; top: 24px; right: 32px;
+    font-size: 2rem; color: var(--muted); cursor: pointer; line-height: 1;
+    transition: color .2s;
+  }
+  #lightbox-close:hover { color: var(--cream); }
+
+  /* ── REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.on { opacity: 1; transform: none; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--dark); border-top: 1px solid var(--border); padding: 60px 56px 0; }
+  .footer-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 900; color: var(--gold-l); letter-spacing: 3px; margin-bottom: 14px;
+  }
+  .footer-logo span { color: var(--cream); font-weight: 400; }
+  .footer-brand p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+  .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+  .footer-social a {
+    width: 34px; height: 34px; border: 1px solid var(--border); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 700; color: var(--muted); text-transform: uppercase;
+    transition: all .25s;
+  }
+  .footer-social a:hover { border-color: var(--gold-l); color: var(--gold-l); }
+  .footer-col h4 {
+    font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 18px; font-weight: 600;
+  }
+  .footer-col a, .footer-col p {
+    display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 10px;
+    transition: color .2s; line-height: 1.5;
+  }
+  .footer-col a:hover { color: var(--cream2); }
+  .footer-bottom {
+    border-top: 1px solid var(--border); padding: 20px 0;
+    display: flex; justify-content: space-between;
+    font-size: 0.75rem; color: var(--muted);
+    max-width: 1180px; margin: 0 auto;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+  }
+  @media (max-width: 768px) {
+    #main-nav { padding: 0 24px; }
+    .nav-toggle { display: flex; }
+    #nav-menu {
+      display: none; flex-direction: column; gap: 0;
+      position: absolute; top: 68px; left: 0; right: 0;
+      background: rgba(255,255,255,0.98); border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    #nav-menu.open { display: flex; }
+    #nav-menu li { width: 100%; }
+    #nav-menu a { display: block; padding: 12px 24px; font-size: 0.85rem; }
+    .nav-cta { margin: 8px 24px; display: inline-block !important; }
+    .page-hero { padding: 120px 24px 60px; }
+    .section { padding: 60px 24px; }
+    .grid-2 { grid-template-columns: 1fr; gap: 36px; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .grid-4 { grid-template-columns: 1fr 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    footer { padding: 48px 24px 0; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+  @media (max-width: 480px) {
+    .grid-4 { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body style="--feature-image:url('/assets/factory-images/factory-04.jpg')">
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">CEKO <span>OPTICS</span></a>
+  <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul id="nav-menu">
+    <li><a href="trong-doi-mau.html">Tròng đổi màu</a></li>
+    <li><a href="san-pham.html">Sản phẩm</a></li>
+    <li><a href="cong-nghe.html">Công nghệ</a></li>
+    <li><a href="oem.html">OEM</a></li>
+    <li><a href="tin-tuc.html">Tin tức</a></li>
+    <li><a href="lien-he.html" class="nav-cta">Liên hệ</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="--page-hero-image:url('/assets/factory-images/factory-02.jpg')">
+  <div class="page-hero-inner">
+    <span class="eyebrow">Dịch vụ OEM</span>
+    <h1>Xây dựng <em>thương hiệu</em><br>kính riêng của bạn</h1>
+    <p>CEKO OPTICS cung cấp dịch vụ sản xuất tròng kính theo thương hiệu riêng (OEM) cho các nhà phân phối, chuỗi cửa hàng kính mắt và doanh nghiệp muốn ra mắt dòng sản phẩm độc quyền.</p>
+    <div class="badge-row">
+      <span class="badge">MOQ thấp</span>
+      <span class="badge">In logo theo yêu cầu</span>
+      <span class="badge">Bao bì riêng</span>
+      <span class="badge">Chứng nhận CO/CQ</span>
+    </div>
+  </div>
+</div>
+
+<section class="section section--alt">
+  <div class="section-wrap">
+    <div class="section-header center reveal">
+      <span class="eyebrow">Quy trình OEM</span>
+      <h2 class="section-title">Từ ý tưởng đến<br>sản phẩm hoàn chỉnh</h2>
+    </div>
+    <div class="timeline" style="max-width:720px;margin:0 auto">
+      <div class="timeline-item reveal">
+        <div class="timeline-num">1</div>
+        <div class="timeline-content">
+          <h3>Tư vấn & Báo giá</h3>
+          <p>Liên hệ với CEKO để trao đổi về loại tròng, số lượng, yêu cầu bao bì và logo. Nhận báo giá trong vòng 24 giờ.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-num">2</div>
+        <div class="timeline-content">
+          <h3>Thiết kế mẫu</h3>
+          <p>Đội thiết kế hỗ trợ tạo artwork cho bao bì, tem nhãn, hộp đựng — hoặc sử dụng file thiết kế của bạn.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-num">3</div>
+        <div class="timeline-content">
+          <h3>Duyệt mẫu</h3>
+          <p>Sản xuất 2–5 mẫu thử để bạn kiểm tra chất lượng và xác nhận trước khi sản xuất hàng loạt.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-num">4</div>
+        <div class="timeline-content">
+          <h3>Sản xuất & Kiểm định</h3>
+          <p>Sản xuất theo số lượng đã đặt, kiểm tra 100% từng sản phẩm đầu ra, đóng gói theo yêu cầu.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-num">5</div>
+        <div class="timeline-content">
+          <h3>Giao hàng & Hỗ trợ</h3>
+          <p>Giao hàng toàn quốc, cung cấp đầy đủ giấy tờ CO/CQ, hóa đơn và hỗ trợ sau bán hàng.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-wrap">
+    <div class="grid-2" style="gap:64px;align-items:start">
+      <div>
+        <span class="eyebrow reveal">Tại sao chọn CEKO OEM?</span>
+        <h2 class="section-title reveal">Lợi thế cạnh tranh<br>của đối tác</h2>
+        <div style="display:flex;flex-direction:column;gap:16px;margin-top:32px">
+          <div class="feat-card reveal">
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div class="feat-icon" style="flex-shrink:0;--feature-image:url('/assets/factory-images/factory-01.jpg')"></div>
+              <div><h3>MOQ linh hoạt</h3><p>Đặt hàng từ 100 tròng mỗi loại — không cần đặt số lượng lớn ngay từ đầu, phù hợp doanh nghiệp nhỏ và vừa.</p></div>
+            </div>
+          </div>
+          <div class="feat-card reveal">
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div class="feat-icon" style="flex-shrink:0;--feature-image:url('/assets/product-images/1.60%20MR-8%20blue%20cut%20photogrey%20SHMC.jpg')"></div>
+              <div><h3>Tùy chỉnh bao bì toàn diện</h3><p>In logo, tên thương hiệu, thông số kỹ thuật lên tờ bảo hộ, hộp giấy, túi đựng theo màu sắc và phong cách bạn chọn.</p></div>
+            </div>
+          </div>
+          <div class="feat-card reveal">
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div class="feat-icon" style="flex-shrink:0;--feature-image:url('/assets/factory-images/factory-06.jpg')"></div>
+              <div><h3>Thời gian giao hàng nhanh</h3><p>Đơn hàng thông thường hoàn thành trong 7–14 ngày làm việc sau khi duyệt mẫu. Đơn hàng lớn thương lượng thêm.</p></div>
+            </div>
+          </div>
+          <div class="feat-card reveal">
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div class="feat-icon" style="flex-shrink:0;--feature-image:url('/assets/factory-images/factory-05.jpg')"></div>
+              <div><h3>Hồ sơ pháp lý đầy đủ</h3><p>Cung cấp CO (Chứng nhận xuất xứ), CQ (Chứng nhận chất lượng), hóa đơn GTGT và hợp đồng rõ ràng.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="feat-card reveal" style="margin-bottom:20px;background:rgba(224,48,36,0.06);border-color:rgba(224,48,36,0.25)">
+          <span class="eyebrow" style="margin-bottom:12px">Bảng giá tham khảo OEM</span>
+          <table style="width:100%;border-collapse:collapse;font-size:0.85rem">
+            <thead>
+              <tr style="border-bottom:1px solid var(--border)">
+                <th style="text-align:left;padding:10px 8px;color:var(--muted);font-weight:500">Sản phẩm</th>
+                <th style="text-align:center;padding:10px 8px;color:var(--muted);font-weight:500">100–499</th>
+                <th style="text-align:center;padding:10px 8px;color:var(--muted);font-weight:500">500+</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(224,48,36,0.06)">
+                <td style="padding:10px 8px">1.56 Blue Cut SHMC</td>
+                <td style="text-align:center;padding:10px 8px;color:var(--gold-l)">Liên hệ</td>
+                <td style="text-align:center;padding:10px 8px;color:var(--gold-l)">Liên hệ</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(224,48,36,0.06)">
+                <td style="padding:10px 8px">1.60 MR-8 SHMC</td>
+                <td style="text-align:center;padding:10px 8px;color:var(--gold-l)">Liên hệ</td>
+                <td style="text-align:center;padding:10px 8px;color:var(--gold-l)">Liên hệ</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(224,48,36,0.06)">
+                <td style="padding:10px 8px">1.67 Blue Cut SHMC</td>
+                <td style="text-align:center;padding:10px 8px;color:var(--gold-l)">Liên hệ</td>
+                <td style="text-align:center;padding:10px 8px;color:var(--gold-l)">Liên hệ</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 8px">Photochromic Grey</td>
+                <td style="text-align:center;padding:10px 8px;color:var(--gold-l)">Liên hệ</td>
+                <td style="text-align:center;padding:10px 8px;color:var(--gold-l)">Liên hệ</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size:0.75rem;color:var(--muted);margin-top:16px">* Giá chưa bao gồm chi phí thiết kế bao bì và in ấn. Liên hệ để nhận báo giá chi tiết theo yêu cầu cụ thể.</p>
+        </div>
+        <div class="feat-card reveal">
+          <h3 style="margin-bottom:16px">Liên hệ tư vấn OEM</h3>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <input type="text" class="form-input" placeholder="Tên công ty / thương hiệu">
+            <input type="tel" class="form-input" placeholder="Số điện thoại">
+            <textarea class="form-textarea" style="min-height:90px" placeholder="Sản phẩm muốn OEM, số lượng dự kiến..."></textarea>
+            <button class="btn btn-gold" style="width:100%;justify-content:center">Gửi yêu cầu OEM →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- TARGET CLIENTS -->
+<section class="section">
+  <div class="section-wrap">
+    <div class="section-header center reveal">
+      <span class="eyebrow">Đối tượng phù hợp</span>
+      <h2 class="section-title">OEM CEKO dành cho ai?</h2>
+    </div>
+    <div class="grid-4">
+      <div class="feat-card reveal" style="text-align:center">
+        <div class="feat-icon" style="margin:0 auto 16px;--feature-image:url('/assets/model-images/IMG_20260513_104602.png')"></div>
+        <h3>Đại lý kính mắt</h3>
+        <p>Muốn có dòng sản phẩm riêng, tăng biên lợi nhuận và xây dựng nhận diện thương hiệu tại cửa hàng.</p>
+      </div>
+      <div class="feat-card reveal" style="text-align:center">
+        <div class="feat-icon" style="margin:0 auto 16px;--feature-image:url('/assets/lens-images/IMG_20260513_124710.png')"></div>
+        <h3>Shop quang học</h3>
+        <p>Chuỗi cửa hàng kính muốn ra mắt dòng tròng kính mang tên thương hiệu riêng, khác biệt với đối thủ.</p>
+      </div>
+      <div class="feat-card reveal" style="text-align:center">
+        <div class="feat-icon" style="margin:0 auto 16px;--feature-image:url('/assets/product-images/1.56%20photochromic%20grey%20blue%20cut%20SHMC.jpg')"></div>
+        <h3>Nhà phân phối</h3>
+        <p>Đang phân phối tròng kính và muốn mở rộng danh mục với dòng sản phẩm OEM giá cạnh tranh.</p>
+      </div>
+      <div class="feat-card reveal" style="text-align:center">
+        <div class="feat-icon" style="margin:0 auto 16px;--feature-image:url('/assets/factory-images/factory-03.jpg')"></div>
+        <h3>Thương hiệu mới</h3>
+        <p>Startup hoặc doanh nghiệp muốn ra mắt thương hiệu kính mắt mà không cần đầu tư dây chuyền sản xuất.</p>
+      </div>
+    </div>
+    <div style="margin-top:48px;background:rgba(224,48,36,0.05);border:1px solid rgba(224,48,36,0.15);border-radius:4px;padding:36px 40px;max-width:800px;margin-left:auto;margin-right:auto;" class="reveal">
+      <div style="font-size:0.68rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:600;">Hỗ trợ đi kèm OEM</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.87rem;"><span style="color:var(--gold);">✦</span> OEM bao bì theo yêu cầu</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.87rem;"><span style="color:var(--gold);">✦</span> In logo thương hiệu</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.87rem;"><span style="color:var(--gold);">✦</span> Hỗ trợ thiết kế catalog</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.87rem;"><span style="color:var(--gold);">✦</span> Tài liệu marketing</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.87rem;"><span style="color:var(--gold);">✦</span> Chứng nhận CO/CQ</div>
+        <div style="display:flex;align-items:center;gap:10px;font-size:0.87rem;"><span style="color:var(--gold);">✦</span> Hóa đơn GTGT đầy đủ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">CEKO <span>OPTICS</span></div>
+      <p>Chuyên gia tròng kính đổi màu thế hệ mới.<br>Better Vision · Better Protection · Better Life.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/share/14bLRtqWpYB/" target="_blank" rel="noopener" aria-label="Facebook">fb</a>
+        <a href="https://zalo.me/0899527574" target="_blank" rel="noopener" aria-label="Zalo">zl</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Sản phẩm</h4>
+      <a href="trong-doi-mau.html">Tròng đổi màu</a>
+      <a href="san-pham.html">Blue Cut</a>
+      <a href="san-pham.html">MR-8</a>
+      <a href="san-pham.html">Progressive</a>
+    </div>
+    <div class="footer-col">
+      <h4>Công ty</h4>
+      <a href="cong-nghe.html">Công nghệ</a>
+      <a href="oem.html">Dịch vụ OEM</a>
+      <a href="tin-tuc.html">Tin tức</a>
+      <a href="lien-he.html">Liên hệ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Liên hệ</h4>
+      <p>📍 Tầng 2 LK16, Khu Đại Hoàng Long,<br>Phường Võ Cường, Tỉnh Bắc Ninh</p>
+      <p>📞 089 95 27574</p>
+      <p>✉️ cekooptics@gmail.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CEKO OPTICS · cekooptics.com.vn</span>
+    <span>Thiết kế bởi CEKO Team</span>
+  </div>
+</footer>
+<script>
+  function toggleMenu() {
+    document.getElementById('nav-menu').classList.toggle('open');
+  }
+  // Close menu on link click
+  document.querySelectorAll('#nav-menu a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('nav-menu').classList.remove('open'));
+  });
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('main-nav');
+    nav.style.background = window.scrollY > 50
+      ? 'rgba(255,255,255,0.97)' : 'rgba(255,255,255,0.96)';
+  });
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealIO = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => revealIO.observe(el));
+  // Lightbox
+  function openLightbox(src) {
+    const lb = document.getElementById('lightbox');
+    if (!lb) return;
+    lb.querySelector('img').src = src;
+    lb.classList.add('open');
+  }
+  document.addEventListener('click', e => {
+    if (e.target.id === 'lightbox' || e.target.id === 'lightbox-close') {
+      document.getElementById('lightbox')?.classList.remove('open');
+    }
+  });
+  // Tabs
+  function switchTab(tabGroup, tabId) {
+    document.querySelectorAll('[data-tab-group="' + tabGroup + '"] .tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('[data-tab-group="' + tabGroup + '"] .tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelector('[data-tab-group="' + tabGroup + '"] [data-tab="' + tabId + '"]').classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+  }
+</script>
+
+<script>
+// ════════════════════════════════════
+// CEKO OPTICS — API Connector
+// ════════════════════════════════════
+const CEKO_API = (window.CEKO_API_BASE || ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:4000/api' : location.origin + '/api'));
+
+async function loadSettings() {
+  try {
+    const res = await fetch(CEKO_API + '/settings');
+    if (!res.ok) return;
+    const s = await res.json();
+    if (s.hotline) {
+      document.querySelectorAll('a[href^="tel:"]').forEach(el => {
+        el.href = 'tel:' + s.hotline.replace(/\s/g,'');
+        if (el.textContent.match(/^0\d/)) el.textContent = s.hotline;
+      });
+      document.querySelectorAll('[data-setting="hotline"]').forEach(el => el.textContent = s.hotline);
+    }
+    if (s.email) {
+      document.querySelectorAll('a[href^="mailto:"]').forEach(el => {
+        el.href = 'mailto:' + s.email;
+        if (el.textContent.includes('@')) el.textContent = s.email;
+      });
+      document.querySelectorAll('[data-setting="email"]').forEach(el => el.textContent = s.email);
+    }
+    if (s.address) {
+      document.querySelectorAll('[data-setting="address"]').forEach(el => el.innerHTML = s.address);
+    }
+  } catch(e) { /* API offline - dùng data tĩnh */ }
+}
+
+async function cekoSubmitContact() {
+  const btn    = document.getElementById('contact-submit-btn');
+  const msgEl  = document.getElementById('contact-msg');
+  if (msgEl) msgEl.innerHTML = '';
+
+  const get = id => document.getElementById(id)?.value?.trim() || '';
+  const data = {
+    full_name: get('contact-name'),
+    phone:     get('contact-phone'),
+    email:     get('contact-email'),
+    subject:   get('contact-subject'),
+    message:   get('contact-message'),
+  };
+
+  if (!data.full_name || !data.message) {
+    if (msgEl) msgEl.innerHTML = '<p style="color:#ef4444;margin-top:8px;font-size:.85rem">⚠️ Vui lòng điền họ tên và nội dung.</p>';
+    return;
+  }
+
+  if (btn) { btn.disabled = true; btn.textContent = 'Đang gửi...'; }
+
+  try {
+    const res = await fetch(CEKO_API + '/contacts', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(data),
+    });
+    const result = await res.json();
+    if (!res.ok) throw new Error(result.error || 'Lỗi gửi');
+    if (msgEl) msgEl.innerHTML = '<p style="color:#22c55e;margin-top:8px;font-size:.85rem">✅ ' + result.message + '</p>';
+    ['contact-name','contact-phone','contact-email','contact-subject','contact-message'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+  } catch(err) {
+    if (msgEl) msgEl.innerHTML = '<p style="color:#ef4444;margin-top:8px;font-size:.85rem">❌ ' + err.message + '. Liên hệ trực tiếp: <strong>089 95 27574</strong></p>';
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = 'Gửi yêu cầu →'; }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadSettings);
+</script>
+
+<script src="ceko-settings.js?v=20260517"></script>
+</body>
+</html>
