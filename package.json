@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "db:init": "psql $DATABASE_URL -f sql/001_schema.sql && psql $DATABASE_URL -f sql/002_seed.sql"
+    "db:init": "psql $DATABASE_URL -f sql/001_schema.sql && psql $DATABASE_URL -f sql/002_seed.sql",
+    "sync:production": "node scripts/sync-production.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
