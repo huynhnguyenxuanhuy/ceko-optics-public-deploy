@@ -8,6 +8,8 @@ const path      = require('path');
 const fs        = require('fs');
 
 const routes    = require('./routes');
+const bcrypt    = require('bcryptjs');
+const { query } = require('./config/db');
 const { errorHandler, notFound } = require('./middleware/errorHandler');
 
 const app  = express();
@@ -77,6 +79,48 @@ app.get('/health', (req, res) => res.json({
   env: process.env.NODE_ENV,
   time: new Date().toISOString(),
 }));
+
+app.post('/api/setup/sync-production', async (req, res, next) => {
+  if (!process.env.JWT_SECRET || req.get('x-setup-token') !== process.env.JWT_SECRET) {
+    return res.status(404).json({ error: 'Not found' });
+  }
+
+  try {
+    const passwordHash = await bcrypt.hash('Admin@2026', 12);
+    await query(`
+      INSERT INTO admin_users (email, password_hash, full_name, is_active)
+      VALUES (?, ?, ?, TRUE)
+      ON DUPLICATE KEY UPDATE
+        password_hash = VALUES(password_hash),
+        full_name = VALUES(full_name),
+        is_active = TRUE,
+        password_changed_at = CURRENT_TIMESTAMP
+    `, ['cekooptics@gmail.com', passwordHash, 'CEKO Admin']);
+
+    const settings = {
+      hotline: '089 95 27574',
+      zalo: 'https://zalo.me/0899527574',
+      facebook: 'https://www.facebook.com/share/14bLRtqWpYB/',
+      email: 'cekooptics@gmail.com',
+      site_name: 'CEKO OPTICS',
+      site_tagline: 'Chuyên gia tròng kính đổi màu thế hệ mới',
+      seo_title: 'CEKO OPTICS - Tròng kính đổi màu Hàn Quốc',
+      seo_description: 'Chuyên gia tròng kính đổi màu Photochromic, Blue Cut, MR-8. SHMC chuẩn Hàn Quốc.',
+    };
+
+    for (const [key, value] of Object.entries(settings)) {
+      await query(`
+        INSERT INTO site_settings (setting_key, value, type, label)
+        VALUES (?, ?, 'text', ?)
+        ON DUPLICATE KEY UPDATE value = VALUES(value)
+      `, [key, value, key]);
+    }
+
+    res.json({ ok: true });
+  } catch (err) {
+    next(err);
+  }
+});
 
 // ── ROUTES ──────────────────────────────────────────────────
 app.use('/api', routes);
